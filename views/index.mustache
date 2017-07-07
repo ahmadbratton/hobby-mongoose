@@ -1,0 +1,31 @@
+<form class="" action="/" method="post">
+  <input type="text" name="make" placeholder="make">
+  <input type="text" name="color" placeholder="color">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="year" placeholder="year">
+  <input type="text" name="price" placeholder="price">
+  <button type="submit">add to collection</button>
+</form>
+
+
+
+
+
+<h1>Cars</h1>
+{{#info}}
+<ul>
+
+  <li>{{make}} ,{{#model}} {{name}}, {{year}} {{/model}}, {{color}}, {{price}}</li>
+
+  <form class="" action="/{{_id}}/delete" method="post">
+    <button type="submit" name="button">delete</button>
+  </form>
+  <form class="" action="/{{_id}}/edit" method="post">
+
+    <input type="text" name="item" placeholder="what are you editing"  >
+    <input type="text" name="new_item" placeholder="changes">
+    <button type="submit" name="button">edit</button>
+
+  </form>
+</ul>
+{{/info}}
