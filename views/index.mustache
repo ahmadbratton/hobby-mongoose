@@ -25,6 +25,16 @@
     <input type="text" name="item" placeholder="what are you editing"  >
     <input type="text" name="new_item" placeholder="changes">
     <button type="submit" name="button">edit</button>
+    <div class="model">
+    {{#model}}
+    <input id type="text" name="year_hold" value="{{year}}">
+    <input type="text" name="name_hold" value="{{name}}">
+    {{/model}}
+  </div>
+    <!-- {{#yes}} -->
+
+
+    <!-- {{/yes}} -->
 
   </form>
 </ul>

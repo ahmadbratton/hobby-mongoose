@@ -20,13 +20,13 @@ const hobby = mongoose.model("car", hobbySchema);
 
 const edit = function (req,res,next) {
   if (req.body.item === "name"){
-    hobby.updateOne({_id: req.params.id}, {model: {name: req.body.new_item }}).then(function (name) {
+    hobby.updateOne({_id: req.params.id}, {model: {name: req.body.new_item , year:req.body.year_hold }}).then(function (name) {
       console.log(name)
       // res.redirect("/");
     });
   }
    if (req.body.item === "year"){
-    hobby.updateOne({_id: req.params.id}, {model: {  year: req.body.new_item }}).then(function (year) {
+    hobby.updateOne({_id: req.params.id}, {model: { name:req.body.name_hold , year: req.body.new_item }}).then(function (year) {
       console.log(year);
       // res.redirect("/");
     });
@@ -55,7 +55,6 @@ next();
 router.get("/", function (req , res) {
 hobby.find({}).then(function (cars) {
   console.log(cars);
-  console.log(cars.model);
   res.render("index", {info: cars});
 })
 
